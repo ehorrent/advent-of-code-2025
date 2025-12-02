@@ -92,13 +92,13 @@ fn main() {
 
     // Part 1
     let mut cursor = Cursor::new(50, 100);
-    let result01 = solve_part1(&mut cursor, &all_moves);
-    println!("  Part 1 - Final code: {}", result01);
+    let result = solve_part1(&mut cursor, &all_moves);
+    println!("  Part 1 - Final code: {}", result);
 
     // Part 2
     let mut cursor = Cursor::new(50, 100);
-    let result01 = solve_part2(&mut cursor, &all_moves);
-    println!("  Part 2 - Final code: {}", result01);
+    let result = solve_part2(&mut cursor, &all_moves);
+    println!("  Part 2 - Final code: {}", result);
 }
 
 #[cfg(test)]

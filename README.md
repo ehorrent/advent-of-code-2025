@@ -2,11 +2,11 @@
 
 https://adventofcode.com/2025
 
-## How to build
+## Build and run
 
 ```bash
-cargo build
+cargo build --workspace -r
 
 # Run day 01
-cargo run --bin day01
+cargo run --bin day01 -r
 ```
