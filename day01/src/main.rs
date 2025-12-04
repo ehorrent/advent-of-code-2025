@@ -105,9 +105,7 @@ fn main() {
 mod tests {
     use super::*;
 
-    #[test]
-    fn check_part1_result() {
-        let raw_data = "L68
+    const RAW_INPUT: &str = "L68
 L30
 R48
 L5
@@ -118,27 +116,18 @@ L99
 R14
 L82";
 
+    #[test]
+    fn check_part1_result() {
         let mut cursor = Cursor::new(50, 100);
-        let all_moves = parse_input(raw_data);
+        let all_moves = parse_input(RAW_INPUT);
         let result = solve_part1(&mut cursor, &all_moves);
         assert_eq!(result, 3);
     }
 
     #[test]
     fn check_part2_result() {
-        let raw_data = "L68
-L30
-R48
-L5
-R60
-L55
-L1
-L99
-R14
-L82";
-
         let mut cursor = Cursor::new(50, 100);
-        let all_moves = parse_input(raw_data);
+        let all_moves = parse_input(RAW_INPUT);
         let result = solve_part2(&mut cursor, &all_moves);
         assert_eq!(result, 6);
     }
