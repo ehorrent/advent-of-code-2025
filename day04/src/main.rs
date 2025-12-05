@@ -35,7 +35,9 @@ impl Solver {
         }
 
         for pos in to_remove.iter() {
-            self.grid.set(pos, Cell::Empty);
+            if let Some(cell) = self.grid.get_mut(pos) {
+                *cell = Cell::Empty;
+            }
         }
 
         to_remove.len()

@@ -1,7 +1,7 @@
 <component name="ProjectRunConfigurationManager">
-  <configuration default="false" name="Run day04" type="CargoCommandRunConfiguration" factoryName="Cargo Command" folderName="Days">
+  <configuration default="false" name="Run day05" type="CargoCommandRunConfiguration" factoryName="Cargo Command" folderName="Days">
     <option name="buildProfileId" value="release" />
-    <option name="command" value="run --package day04 --bin day04" />
+    <option name="command" value="run --package day05 --bin day05" />
     <option name="workingDirectory" value="file://$PROJECT_DIR$" />
     <envs />
     <option name="emulateTerminal" value="true" />

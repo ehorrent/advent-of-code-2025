@@ -28,11 +28,7 @@ impl<TCell> Grid<TCell>
         self.rows.get(position.y as usize)?.get(position.x as usize)
     }
     
-    pub fn set(&mut self, position: &Position, value: TCell) {
-        if let Some(row) = self.rows.get_mut(position.y as usize) {
-            if let Some(cell) = row.get_mut(position.x as usize) {
-                *cell = value;
-            }
-        }
+    pub fn get_mut(&mut self, position: &Position) -> Option<&mut TCell> {
+        self.rows.get_mut(position.y as usize)?.get_mut(position.x as usize)
     }
 }
