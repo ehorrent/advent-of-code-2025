@@ -31,4 +31,10 @@ impl<TCell> Grid<TCell>
     pub fn get_mut(&mut self, position: &Position) -> Option<&mut TCell> {
         self.rows.get_mut(position.y as usize)?.get_mut(position.x as usize)
     }
+    
+    pub fn size(&self) -> (usize, usize) {
+        let height = self.rows.len();
+        let width = if height > 0 { self.rows[0].len() } else { 0 };
+        (width, height)
+    }
 }
