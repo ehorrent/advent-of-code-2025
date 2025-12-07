@@ -1,4 +1,4 @@
-use shared::{Grid, Position};
+use shared::{Grid, Vector};
 
 #[derive(Clone, Copy, PartialEq)]
 enum Cell {
@@ -19,9 +19,9 @@ impl Solver {
         let mut to_remove = vec![];
         for (y, row) in self.grid.rows.iter().enumerate() {
             for (x, cell) in row.iter().enumerate() {
-                let pos = Position {
-                    x: x as i32,
-                    y: y as i32,
+                let pos = Vector {
+                    x: x as i64,
+                    y: y as i64,
                 };
 
                 if let Cell::Roll = cell {
@@ -60,7 +60,7 @@ impl Solver {
         count
     }
 
-    fn count_rolls_around(&self, pos: &Position) -> usize {
+    fn count_rolls_around(&self, pos: &Vector) -> usize {
         let directions = [
             (1, 0),
             (1, 1),
@@ -74,7 +74,7 @@ impl Solver {
 
         let mut count = 0;
         for (dir_x, dir_y) in directions {
-            let next_pos = Position {
+            let next_pos = Vector {
                 x: pos.x + dir_x,
                 y: pos.y + dir_y,
             };

@@ -92,7 +92,7 @@ fn main() {
     let raw_data = include_str!("../input/input-05.txt");
     let (ranges, ids) = parse_input(raw_data);
 
-    println!("Solver - day 04:");
+    println!("Solver - day 05:");
 
     // Part 1
     let result = solve_part1(&ranges, &ids);

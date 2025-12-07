@@ -1,4 +1,4 @@
-use shared::Grid;
+use shared::{Grid, Vector};
 
 enum Operation {
     Add,
@@ -46,14 +46,14 @@ fn solve_part1(grid: &Grid<usize>, ops: &Vec<Operation>) -> usize {
     let grid_size = grid.size();
 
     let mut total = 0;
-    for column_index in 0..grid_size.0 {
+    for column_index in 0..grid_size.x as usize {
         let mut value = 0;
         let op = &ops[column_index];
-        for row_index in 0..grid_size.1 {
+        for row_index in 0..grid_size.x {
             let cell_value = grid
-                .get(&shared::Position {
-                    x: column_index as i32,
-                    y: row_index as i32,
+                .get(&Vector {
+                    x: column_index as i64,
+                    y: row_index as i64,
                 })
                 .unwrap();
 
@@ -143,7 +143,7 @@ fn main() {
     let raw_data = include_str!("../input/input-06.txt");
     let (grid, ops) = parse_input(raw_data);
 
-    println!("Solver - day 04:");
+    println!("Solver - day 06:");
 
     // Part 1
     let result = solve_part1(&grid, &ops);
