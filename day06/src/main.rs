@@ -49,11 +49,11 @@ fn solve_part1(grid: &Grid<usize>, ops: &Vec<Operation>) -> usize {
     for column_index in 0..grid_size.x as usize {
         let mut value = 0;
         let op = &ops[column_index];
-        for row_index in 0..grid_size.x {
+        for row_index in 0..grid_size.y {
             let cell_value = grid
                 .get(&Vector {
                     x: column_index as i64,
-                    y: row_index as i64,
+                    y: row_index,
                 })
                 .unwrap();
 

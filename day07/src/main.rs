@@ -181,7 +181,7 @@ mod tests {
     #[test]
     fn check_part1_result() {
         let grid = parse_input(RAW_INPUT);
-        let mut solver = Solver::new(grid);
+        let solver = Solver::new(grid);
         let result = solver.solve_part1();
         assert_eq!(result, 21);
     }
@@ -189,7 +189,7 @@ mod tests {
     #[test]
     fn check_part2_result() {
         let grid = parse_input(RAW_INPUT);
-        let mut solver = Solver::new(grid);
+        let solver = Solver::new(grid);
         let result = solver.solve_part2();
 
         assert_eq!(result, 40);
