@@ -35,8 +35,8 @@ impl Solver {
                 y: pos1.y.min(pos2.y),
             },
             Vector {
-                x: pos1.x.max(pos2.x) + 1,
-                y: pos1.y.max(pos2.y) + 1,
+                x: pos1.x.max(pos2.x),
+                y: pos1.y.max(pos2.y),
             },
         ]
     }
@@ -172,8 +172,8 @@ impl Solver {
                 let pos2 = Self::compress(pos2, &x_values, &y_values);
                 let boundaries = Self::boundaries(&pos1, &pos2);
                 let mut all_occupied = true;
-                for x in boundaries[0].x..boundaries[1].x {
-                    for y in boundaries[0].y..boundaries[1].y {
+                for x in boundaries[0].x..=boundaries[1].x {
+                    for y in boundaries[0].y..=boundaries[1].y {
                         let compressed_pos = Vector { x, y };
                         if let Some(Cell::Empty) | Some(Cell::Unknown) =
                             compressed_grid.get(&compressed_pos)
