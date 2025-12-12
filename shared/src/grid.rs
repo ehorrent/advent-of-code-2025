@@ -1,9 +1,9 @@
-use std::ops::{Index, IndexMut};
 use crate::Vector;
+use std::ops::{Index, IndexMut};
 
 pub type Row<TCell> = Vec<TCell>;
 
-#[derive(Clone, PartialEq)]
+#[derive(Clone, PartialEq, Eq, Hash)]
 pub struct Grid<TCell> {
     size: Vector,
     pub rows: Vec<Row<TCell>>,
